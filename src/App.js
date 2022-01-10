@@ -9,7 +9,12 @@ import PredictBP from "./component/predictBP";
 import { FooterContainer } from "./containers/footer";
 import Contenu from "./component/contenu";
 import Auth from "./component/login";
+import Admin from "./component/visualisation/admin"
+import Powerbi from "./component/visualisation/powerbi"
 import "./App.css";
+import { PowerBIEmbed } from "powerbi-client-react";
+import { models } from 'powerbi-client'
+
 
 function App() {
 
@@ -47,8 +52,19 @@ function App() {
               <Navbar />
               <PredictBP/>
         </Route>
+        <Route exact path="/vadmin">
+              <Navbar />
+              <Admin/>
+        </Route>
+
+        <Route exact path="/powerbi">
+          <Powerbi/>
+        </Route>
+       
       </Switch>
     </Router>
+   
+    
   );
 }
 

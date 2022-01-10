@@ -110,6 +110,13 @@ def predict_BP():
         output = round(prediction[0], 2)
         print(output)
 
+        # database
+        list.append(str(output))
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO creditbp(Credit_History, Education_Not_Graduate, Self_Employed,ApplicantIncome, LoanAmount, Loan_Amount_Term, resultat) VALUES(%s, %s, %s, %s, %s, %s, %s)",(data["Credit_History"],data["Education_Not_Graduate"],data["Self_Employed"],data["ApplicantIncome"],data["LoanAmount"],data["Loan_Amount_Term"],output))
+        mysql.connection.commit()
+        cur.close()
+
        
         if(output == 1):
             output = "Crédit accordé"
@@ -168,6 +175,13 @@ def predict_CIH():
         output = round(prediction[0], 2)
         print(output)
 
+         # database
+        list.append(str(output))
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO creditcih(Credit_History, Dependents, Property_Area, ApplicantIncome, CoapplicantIncome , LoanAmount, Loan_Amount_Term, resultat) VALUES(%s, %s, %s, %s, %s, %s, %s, %s)",(data["Credit_History"],data["Dependents"],data["Property_Area"],data["ApplicantIncome"],data["CoapplicantIncome"],data["LoanAmount"],data["Loan_Amount_Term"],output))
+        mysql.connection.commit()
+        cur.close()
+
        
         if(output == 1):
             output = "Crédit accordé"
@@ -175,6 +189,32 @@ def predict_CIH():
             output = "Crédit non accordé"    
         
         return {'value' : str(output) }
+
+
+
+@app.route('/vadmin',methods=['POST','GET'])
+@cross_origin()
+def vadmin():
+        # database
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT count(GENDER) from credit where GENDER='male'")
+        male = cur.fetchall()
+        cur.execute("SELECT count(GENDER) from credit where GENDER='Female'")
+        female = cur.fetchall()
+        mysql.connection.commit()
+        cur.close()
+        
+        data =[male[0][0],female[0][0]]
+         
+        response = app.response_class(
+        response=json.dumps(data),
+        status=200,
+        mimetype='application/json'
+             )
+        
+        return response
+
+
 
 
 

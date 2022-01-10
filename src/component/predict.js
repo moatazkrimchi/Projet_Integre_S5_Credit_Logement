@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
+import '../style/predictCIH.css'
+
 
 const Predict = () => {
 
@@ -8,7 +10,7 @@ const Predict = () => {
 
   return (
 	<div>        
-        <h1>Simulation credit</h1>  
+        <h1 className='titre'>Bienvenue au service BMCI</h1>  
         <form onSubmit={(e)=>{e.preventDefault();  
                       var Credit_History =document.getElementById("IDCredit_History");
                       var Gender=document.getElementById("IDGender");
@@ -75,7 +77,7 @@ const Predict = () => {
                               }
                         }}
                       > 
-        <select name="Credit_History"  placeholder="Credit_History"  id="IDCredit_History">
+        <select className='op' name="Credit_History"  placeholder="Credit_History"  id="IDCredit_History">
                                           <option selected disabled hidden>Credit_History</option>
                                           <option  >Yes</option>
 
@@ -84,7 +86,7 @@ const Predict = () => {
      </select>
      <br/>
 
-    <select  name="Gender"  placeholder="Gender"  id="IDGender">
+    <select className='op'  name="Gender"  placeholder="Gender"  id="IDGender">
                                           <option selected disabled hidden>Gender</option>
                                           <option  >Male</option>
 
@@ -93,7 +95,7 @@ const Predict = () => {
      </select>
      <br/>
 
-    <select name="Married" placeholder="Married"  id="IDMarried">
+    <select className='op' name="Married" placeholder="Married"  id="IDMarried">
                                            <option selected disabled hidden>Married</option>
 
                                           <option  >Yes</option>
@@ -101,7 +103,7 @@ const Predict = () => {
                                           
      </select>
      <br/>
-    <select name="Dependents" placeholder="Dependents" required="required" id="IDDependents">
+    <select className='op' name="Dependents" placeholder="Dependents" required="required" id="IDDependents">
     <option selected disabled hidden>Dependents</option>
 
                                           <option  >0</option>
@@ -112,7 +114,7 @@ const Predict = () => {
      </select>
      <br/>
 		
-    <select name="Education_Not Graduate" placeholder="Education_Not Graduate" required="required" id="IDEducation_Not_Graduate">
+    <select className='op' name="Education_Not Graduate" placeholder="Education_Not Graduate" required="required" id="IDEducation_Not_Graduate">
     <option selected disabled hidden>Education_Not Graduate</option>
 
                                           <option  >Yes</option>
@@ -120,7 +122,7 @@ const Predict = () => {
                                           
      </select>
      <br/>
-    <select name="Self_Employed" placeholder="Self_Employed" required="required" id="IDSelf_Employed">
+    <select className='op' name="Self_Employed" placeholder="Self_Employed" required="required" id="IDSelf_Employed">
     <option selected disabled hidden>Self_Employed</option>
 
                                           <option  >Yes</option>
@@ -129,7 +131,7 @@ const Predict = () => {
      </select>
      <br/>
 
-    <select name="Property_Area" placeholder="Property_Area" required="required" id="IDProperty_Area">
+    <select className='op' name="Property_Area" placeholder="Property_Area" required="required" id="IDProperty_Area">
     <option selected disabled hidden>Property_Area</option>
 
                                           <option  >Semiurban</option>
@@ -140,16 +142,17 @@ const Predict = () => {
      </select>
      <br/>
 
-		<input type="text" name="ApplicantIncome" placeholder="ApplicantIncome" id="IDApplicantIncome" required="required" />
-    
+		<input className='in' type="text" name="ApplicantIncome" placeholder="ApplicantIncome" id="IDApplicantIncome" required="required" />
+    <br/>
 
 
 
-    <input type="text" name="CoapplicantIncome" placeholder="CoapplicantIncome" id="IDCoapplicantIncome"/>
-    <input type="text" name="LoanAmount" placeholder="LoanAmount" id="IDLoanAmount" required="required" />
-
-		<input type="text" name="Loan_Amount_Term" placeholder="Loan_Amount_Term" id="IDLoan_Amount_Term" required="required" />
-
+    <input className='in' type="text" name="CoapplicantIncome" placeholder="CoapplicantIncome" id="IDCoapplicantIncome"/>
+    <br/>
+    <input className='in' type="text" name="LoanAmount" placeholder="LoanAmount" id="IDLoanAmount" required="required" />
+    <br/>
+		<input className='in' type="text" name="Loan_Amount_Term" placeholder="Loan_Amount_Term" id="IDLoan_Amount_Term" required="required" />
+    <br/>
 
         <button type="submit" class="btn btn-primary btn-block btn-large"
                         
@@ -158,8 +161,8 @@ const Predict = () => {
                           
                           >Predict</button>
     
-
-    <input className="output" type="text" id="IDOutput" value={output} onChange={(e) => setoutput(e.target.value)} disabled={true}/>
+    <br/>
+    <input className='in' placeholder="Prévsion Crédit"  type="text" id="IDOutput" value={output} onChange={(e) => setoutput(e.target.value)} disabled={true}/>
     </form>
 
 
