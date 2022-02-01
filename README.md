@@ -36,7 +36,7 @@ L'objectif de ce projet est la réalisation d'une application web permettant de 
 ![image](https://user-images.githubusercontent.com/74151613/151880533-d4560974-4bfc-493d-8214-4c1fd41845ce.png)
 ![image](https://user-images.githubusercontent.com/74151613/151880538-6d77bc43-41f0-487c-80aa-c720b196d309.png)
 
-<strong> Python, React JS, ScikitLearn, Flask, Mysql, PowerBI <strong/>
+<strong> Python, React JS, ScikitLearn, Flask, Mysql, PowerBI </strong>
 
 ## conclusion
 Ce projet était très bénéfique et instructif sur plusieurs plans. On a pu manipuler les différents algorithmes de la machine Learning notamment les algorithmes de classification. On a pu de même appréhender de la nouvelle matière en manipulant plusieurs outils, de découvrir de nouveaux Frameworks, d’améliorer nos compétences dans le développement backend ainsi que front end et en termes de traitement des données.
