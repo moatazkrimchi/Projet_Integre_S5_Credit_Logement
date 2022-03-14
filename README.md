@@ -1,4 +1,4 @@
-# Prediction Credit de Logmeent 
+# Prediction Credit de Logement 
 
 Parmi les techniques du Machine Learning les plus connues, on cite le système de prédiction. Celui-ci utilise les algorithmes de prédiction, ou la machine va apprendre de l’historique dont elle dispose et pourra prédire un comportement sous la forme d’une réponse simple à une question.
 
